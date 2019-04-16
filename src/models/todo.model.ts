@@ -1,4 +1,4 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasMany} from '@loopback/repository';
 
 @model()
 export class Todo extends Entity {
@@ -33,6 +33,11 @@ export class Todo extends Entity {
   })
   remindAtGeo: string; // latitude, longitude
 
+  @hasMany(() => Todo)
+  todos?: Todo[];
+
+  @property()
+  todoListId: number;
 
   constructor(data?: Partial<Todo>) {
     super(data);
