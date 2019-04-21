@@ -5,10 +5,8 @@ import * as config from './db.datasource.json';
 export class DbDataSource extends juggler.DataSource {
   static dataSourceName = 'db';
 
-  constructor(
-    @inject('datasources.config.db', {optional: true})
-    dsConfig: object = config,
-  ) {
+  constructor(@inject('datasources.config.db', {optional: true})
+    dsConfig: object = config) {
     super(dsConfig);
   }
 }
