@@ -33,9 +33,6 @@ export class Todo extends Entity {
   })
   remindAtGeo: string; // latitude, longitude
 
-  @hasMany(() => Todo)
-  todos?: Todo[];
-
   @property()
   todoListId: number;
 
